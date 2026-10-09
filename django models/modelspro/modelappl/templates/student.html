@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Add Student</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Name:
+    <input type="text" name="name">
+    <br><br>
+
+    Roll Number:
+    <input type="number" name="roll_number">
+    <br><br>
+
+    Class:
+    <input type="text" name="class">
+    <br><br>
+
+    Age:
+    <input type="number" name="age">
+    <br><br>
+
+    Parent Contact:
+    <input type="text" name="parent_contact">
+    <br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<p>{{ message }}</p>
+
+</body>
+</html>

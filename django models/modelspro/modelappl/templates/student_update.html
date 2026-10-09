@@ -1,0 +1,27 @@
+<h1>Update Student</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Name:
+    <input type="text" name="name" value="{{ student.name }}">
+    <br><br>
+
+    Roll Number:
+    <input type="number" name="roll_number" value="{{ student.rollnumber }}">
+    <br><br>
+
+    Class:
+    <input type="text" name="class" value="{{ student.student_class }}">
+    <br><br>
+
+    Age:
+    <input type="number" name="age" value="{{ student.age }}">
+    <br><br>
+
+    Parent Contact:
+    <input type="text" name="parent_contact" value="{{ student.parent_contact }}">
+    <br><br>
+
+    <button type="submit">Update</button>
+</form>

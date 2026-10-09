@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Search Student</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Enter Roll Number:
+    <input type="text" name="roll" required>
+
+    <button type="submit">Search</button>
+</form>
+
+{% if student %}
+
+<h3>Student Details</h3>
+
+<table border="1">
+    <tr>
+        <th>Roll Number</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Class</th>
+    </tr>
+
+    <tr>
+        <td>{{ student.roll }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.course }}</td>
+    </tr>
+</table>
+
+<h3>Marks</h3>
+
+<table border="1">
+    <tr>
+        <th>Telugu</th>
+        <th>Maths</th>
+        <th>Science</th>
+        <th>English</th>
+    </tr>
+
+    <tr>
+        <td>{{ marks.telugu }}</td>
+        <td>{{ marks.maths }}</td>
+        <td>{{ marks.science }}</td>
+        <td>{{ marks.english }}</td>
+    </tr>
+</table>
+
+{% elif searched %}
+
+<p>Student not found.</p>
+
+{% endif %}
+
+{% endblock %}
+</body>
+</html>

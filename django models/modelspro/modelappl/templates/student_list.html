@@ -1,0 +1,15 @@
+<h1>Student List</h1>
+
+{% for student in students %}
+    <p>
+        Name: {{ student.name }}<br>
+        Roll Number: {{ student.rollnumber }}<br>
+        Class: {{ student.student_class }}<br>
+        Age: {{ student.age }}<br>
+        Parent Contact: {{ student.parent_contact }}
+    </p>
+
+    <hr>
+{% empty %}
+    <p>No students have been added yet.</p>
+{% endfor %}

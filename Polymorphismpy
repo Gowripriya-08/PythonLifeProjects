@@ -1,0 +1,93 @@
+# operator overlading
+int1 = 1
+int2 =2
+print(int1+int2)
+
+str1 = "hello"
+str2 = "world"
+print(str1+str2)
+
+# Method overloading, we overcome by default values
+class priya():
+    def add(self,a,b):
+        print(a+b)
+    def add(self,a,b,c=3):
+        print(a+b+c)
+addition = priya()
+addition.add(1,2)
+addition.add(10,10,10)
+
+# method overriding
+class mogali():
+    def details(self,a):
+        print(f"this is the father of teh class")
+
+class gowri(mogali):
+    def details(self,a):
+        print(f" this is the child class")
+        super().details("100cr")
+obj = gowri()
+obj.details("b")
+
+# encaspulation
+
+class priya():
+    def __init__(self,a):
+        self._a = a
+        print(f"this is the base class{a}")
+
+class mogali(priya):
+    def details(self,):
+        print(f"this is the derived class from {self._a}")
+obj = mogali("gowri")
+obj.details()
+
+# abstract class
+from abc import ABC,abstractmethod
+class abstract_demo(ABC):
+    @abstractmethod
+    def display(self):
+        pass
+    def display2(self):
+        pass
+
+class demo(abstract_demo):
+    def display(self):
+        print('this is amazing')
+    def display2(self):
+        print("i love it")
+obj = demo()
+obj.display()
+obj.display2()
+
+
+#  qr code
+from abc import ABC,abstractmethod
+class payment(ABC):
+    def pay(self):
+        pass
+
+class goglepay(payment):
+    def pay(self):
+        print(f"payment recieved")
+
+class phonepay(payment):
+    def pay(self):
+        print(f"payment succesful")
+
+class paytm(payment):
+    def pay(self):
+        print(f"paymetnt done")
+
+class cred(payment):
+    def pay(self):
+        print(f"payment finsih")
+
+obj1 = goglepay()
+obj1.pay()
+obj2 = phonepay()
+obj2.pay()
+obj3 = paytm()
+obj3.pay()
+obj4 = cred()
+obj4.pay()
